@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CodeOps – Learn Tech the Right Way</title>
+
+<style>
+:root {
+  --primary:#051547;
+  --black:#000;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent:#2563eb;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  /* font-family:system-ui,-apple-system,BlinkMacSystemFont; */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+  background:var(--black);
+  color:var(--text);
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:linear-gradient(90deg,#000,var(--primary));
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-container{
+  max-width:1200px;
+  margin:auto;
+  padding:16px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:800;
+  text-decoration:none;
+  color:white;
+}
+
+.logo span{color:#fde400}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+  align-items:center;
+}
+
+.nav-links a{
+  color:var(--text);
+  text-decoration:none;
+  font-weight:500;
+  font-size:15px;
+}
+
+.nav-links a:hover{color:#0044ff}
+
+.cta-btn{
+  background:linear-gradient(135deg,#ebc725,#ffc400);
+  padding:10px 20px;
+  border-radius:10px;
+  font-weight:700;
+  color:white;
+  box-shadow:0 0 20px rgba(37,99,235,.7);
+}
+
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+  color:white;
+}
+
+@media(max-width:768px){
+  .menu-toggle{display:block}
+  .nav-links{
+    position:absolute;
+    top:64px;
+    left:0;
+    width:100%;
+    background:#000;
+    flex-direction:column;
+    padding:22px 0;
+    display:none;
+    border-bottom:1px solid rgba(255,255,255,.1);
+  }
+  .nav-links.active{display:flex}
+  .cta-btn{width:88%;text-align:center}
+}
+
+/* ================= HERO ================= */
+.hero{
+  background:radial-gradient(circle at top,var(--primary),#000 60%);
+  padding:110px 20px 90px;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:46px;
+  font-weight:900;
+  line-height:1.2;
+}
+
+.hero h1 span{color:#ffc400}
+
+.hero p{
+  margin:20px auto 40px;
+  max-width:720px;
+  color:var(--muted);
+  font-size:18px;
+}
+
+.hero-cta{
+  padding:16px 36px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#2563eb,#1e40af);
+  color:white;
+  text-decoration:none;
+  font-weight:800;
+  box-shadow:0 0 40px rgba(37,99,235,.9);
+}
+
+.hero-note{
+  margin-top:2%;
+  font-size:13px;
+  color:var(--muted);
+}
+
+@media(max-width:768px){
+  .hero h1{font-size:32px}
+  .hero p{font-size:16px}
+}
+
+/* ================= WHY CODEOPS ================= */
+.section{
+  padding:90px 20px;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+  text-align:center;
+}
+
+.section h2{
+  font-size:38px;
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+.subtitle{
+  max-width:650px;
+  margin:0 auto 60px;
+  color:var(--muted);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:28px;
+}
+
+.card{
+  background:linear-gradient(135deg,rgba(5,21,71,.85),rgba(0,0,0,.95));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  padding:28px;
+  text-align:left;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(37,99,235,.6);
+}
+
+.card h3{
+  color:#bfdbfe;
+  margin-bottom:10px;
+}
+
+.card p{font-size:15px;line-height:1.7}
+
+.trust-line{
+  margin-top:40px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+@media(max-width:768px){
+  .grid{grid-template-columns:1fr}
+  .section h2{font-size:30px}
+}
+
+/* ================= FOUNDATION ================= */
+.syllabus-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px;
+}
+
+.syllabus-card h3{color:#bfdbfe}
+
+.syllabus-card ul{
+  list-style:none;
+  margin-top:10px;
+}
+
+.syllabus-card li{
+  font-size:14px;
+  margin-bottom:8px;
+}
+
+@media(max-width:900px){
+  .syllabus-grid{grid-template-columns:1fr}
+}
+
+/* ================= BRIDGE ================= */
+.bridge{
+  background:linear-gradient(180deg,#000,#020617);
+}
+
+.bridge-box{
+  max-width:850px;
+  margin:40px auto 0;
+  background:rgba(5,21,71,.9);
+  padding:34px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.bridge-cta{
+  display:inline-block;
+  margin-top:24px;
+  padding:14px 32px;
+  background:linear-gradient(135deg,#2563eb,#1e40af);
+  color:white;
+  border-radius:12px;
+  font-weight:800;
+  text-decoration:none;
+  box-shadow:0 0 30px rgba(37,99,235,.7);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a class="logo" href="#">Code<span>Ops</span></a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#courses">Courses</a>
+      <a href="#why">Why CodeOps</a>
+      <a href="#foundation">Free Foundation</a>
+      <a href="#foundation" class="cta-btn">Join Free</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Learn Tech the <span>Right Way</span><br>From Absolute Basics</h1>
+  <p>
+    A structured learning platform for beginners who want real fundamentals
+    in Linux, Git, Cloud & DevOps — without shortcuts or fake promises.
+  </p>
+  <a href="#foundation" class="hero-cta">Start Free Foundation</a>
+  <div class="hero-note">No payment • Beginner-friendly • Structured learning</div>
+</section>
+
+<!-- WHY CODEOPS -->
+<section class="section" id="why">
+  <div class="container">
+    <h2>Why CodeOps</h2>
+    <p class="subtitle">Built for beginners who want real fundamentals — not shortcuts.</p>
+
+    <div class="grid">
+      <div class="card"><h3>Foundation-First Learning</h3><p>We start from zero and build strong fundamentals before advanced tools.</p></div>
+      <div class="card"><h3>Real Tools, Real Practice</h3><p>Linux, Git, Cloud & CI/CD with guided hands-on practice.</p></div>
+      <div class="card"><h3>Clear Learning Path</h3><p>Foundation → Practice → Advanced Track. No confusion. No forced upsells.</p></div>
+      <div class="card"><h3>Honest & Transparent</h3><p>No job or salary promises. Just skills and readiness.</p></div>
+    </div>
+
+    <div class="trust-line">No fake guarantees. No exaggerated outcomes.</div>
+  </div>
+</section>
+
+<!-- FOUNDATION -->
+<section class="section" id="foundation">
+  <div class="container">
+    <h2>Free Foundation Syllabus</h2>
+    <p class="subtitle">Clear • Structured • Beginner-friendly</p>
+
+    <div class="syllabus-grid">
+      <div class="card syllabus-card">
+        <h3>Linux Basics</h3>
+        <ul>
+          <li>• Commands & filesystem</li>
+          <li>• Permissions & users</li>
+          <li>• Processes</li>
+        </ul>
+      </div>
+      <div class="card syllabus-card">
+        <h3>Git & GitHub</h3>
+        <ul>
+          <li>• Version control</li>
+          <li>• Branching</li>
+          <li>• GitHub workflow</li>
+        </ul>
+      </div>
+      <div class="card syllabus-card">
+        <h3>Cloud & DevOps</h3>
+        <ul>
+          <li>• Cloud fundamentals</li>
+          <li>• CI/CD concepts</li>
+          <li>• DevOps lifecycle</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONVERSION BRIDGE -->
+<section class="section bridge">
+  <div class="container">
+    <h2>After Foundation</h2>
+    <p class="subtitle">Upgrade only if you’re ready. No pressure.</p>
+
+    <div class="bridge-box">
+      <h3>Advanced DevOps Track — ₹15,999</h3>
+      <p>
+        For learners who complete foundation and want deeper training
+        with advanced tools, projects & guided practice.
+      </p>
+      <a href="#" class="bridge-cta">View Advanced Track</a>
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("active");
+
+}
+</script>
+
+</body>
+</html>
